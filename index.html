@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Paint w/ canvas</title>
+  
+  <style type="text/css">
+  canvas {
+    border: 1px solid black;
+    cursor: crosshair;
+  }
+  textarea { width: 100%; }
+  </style>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="item">
+      <h1>Firma 1</h1>
+      <canvas id="paint" class="paint" width="270" height="150"></canvas>
+      <br/>
+      <button id="clear" class="btn-clear">Limpiar</button>
+      <h2>Code 1 base64</h2>
+      <textarea class="data" id="data-paint" rows="5" readonly></textarea>
+    </div>
+  
+    <div class="item">
+      <h1>Firma 2</h1>
+      <canvas id="paint2" class="paint" width="270" height="150"></canvas>
+      <br/>
+      <button id="clear2" class="btn-clear">Limpiar</button>
+      <h2>Code 2 base64</h2>
+      <textarea class="data" id="data-paint2" rows="5" readonly></textarea>
+    </div>
+  
+  
+    <div class="item">
+      <h1>Firma 3</h1>
+      <canvas id="paint3" class="paint" width="270" height="150"></canvas>
+      <br/>
+      <button id="clear3" class="btn-clear">Limpiar</button>
+      <h2>Code 3 base64</h2>
+      <textarea class="data" id="data-paint3" rows="5" readonly></textarea>
+    </div>
+  </div>
+  <script src="js/index.js"></script>
+</body>
+</html>

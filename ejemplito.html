@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Estacando eventos Touch</title>
+    <meta charset="utf-8" />
+    <script>
+       function inicia(){
+          var obj=document.getElementById("objArrastrable");
+          
+           var canvas = document.getElementById('objeto'); 
+           var ctx= canvas.getContext('2d'); 
+obj.addEventListener('touchmove', function(event){
+    if (event.targetTouches.length == 1) { 
+       var touch = event.targetTouches[0]; 
+       // con esto solo se procesa UN evento touch
+       obj.style.left = touch.pageX + 'px';
+       obj.style.top = touch.pageY + 'px';
+    } 
+       }, false);        
+       
+   canvas.addEventListener('touchmove', function(event) { 
+    for (var i = 0; i < event.touches.length; i++) { 
+   var touch = event.touches[i]; 
+    ctx.beginPath();
+    ctx.arc(touch.pageX, touch.pageY, 20, 0, 2*Math.PI, true);
+    ctx.fill(); 
+    ctx.stroke();
+    } 
+}, false);    
+   }
+    </script>
+    
+    <style>
+       #objArrastrable{
+          border: #000 solid 2px;
+          position: absolute;
+          width:100px;
+          height: 100px;
+          top: 450px;
+          left: 100px;
+       }
+    </style>
+</head>
+    <body onLoad="inicia();">
+      <canvas width="450" height="350" style="border: #000 solid 3px; " id="objeto"></canvas>
+      <div id="objArrastrable">
+         Objeto arrastrable
+      </div>
+    </body>
+</html>
